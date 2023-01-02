@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int i=0,j,n,pos;
+    string a,ch,res="dlestx";
+    cout<<"Enter the string\n";
+    cin>>a;
+    cout<<"Enter charecter to insert\n";
+    cin>>ch;
+    cout<<"Enter position\n";
+    cin>>pos;
+    
+    n=a.size();
+    cout<<n<<endl;
+    
+    for(i=0;i<n;i++)
+    {
+        if(i==pos-1)
+        {
+            res+="dle"+ch+"dle";
+        }//if
+        if(a[i]=='d' && a[i+1]=='l' && a[i+2]=='e')
+        {
+            res+="dle";
+        }//if
+        res+=a[i];
+        // i++;
+    }//while
+    res+="dleetx";
+    cout<<res;
+    return 0;
+}

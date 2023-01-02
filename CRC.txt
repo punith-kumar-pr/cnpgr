@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string data, div, nstr="", rem;
+    int i=0,j=0,k;
+    int datalen, divlen;
+    cout<<"Enter the data\n";
+    cin>>data;
+    cout<<"Enter the divisor\n";
+    cin>>div;
+    datalen = data.size();
+    divlen = div.size();
+    
+    for(i=0;i<divlen-1;i++)
+    {
+        data = data+"0";
+    }
+    cout<<data;
+    datalen = datalen + divlen-1;
+    
+    for(i=0;i<divlen;i++)
+    {
+        rem[i]=data[i];
+    }
+    
+    k = divlen-1;
+    
+    while(k < datalen)
+    {
+        if(rem[0]=='1')
+        {
+            for(i=0;i<divlen;i++)
+            {
+                if(rem[i]==div[i])
+                    rem[i]='0';
+                else
+                    rem[i]='1';
+            }
+        }//if
+        
+        else
+        {
+            if(k==datalen-1)
+                break;
+            for(i=0;i<divlen-1;i++)
+            {
+                rem[i]=rem[i+1];
+                cout<<rem[i];
+            }
+            rem[i]=data[++k];
+            cout<<rem[i]<<endl;
+        }//else
+    }//while
+    
+    j=1;
+    for(i=datalen-divlen+1; i<datalen; i++)
+    {
+        data[i]=rem[j++];
+    }
+    
+    cout<<"The data to be sent\n";
+    cout<<data;
+    
+    return 0;
+}
