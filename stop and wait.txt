@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+#include <unistd.h>
+using namespace std;
+
+int main()
+{
+    int i, j, n, x, x1=10, x2;
+    cout<<"Enter no of frames\n";
+    cin>>n;
+    
+    i=1;
+    j=1;
+    while(n>0)
+    {
+        cout<<"Sending frame "<<i<<endl;
+        srand(x1++);
+        x = rand()%10;
+        if(x%2==0)
+        {   
+            for(x2=1;x2<2;x2++)
+            {
+                cout<<"waiting for "<<x2<<"secs\n";
+                sleep(x2);
+            }
+            cout<<"sending frame "<<i<<endl;
+            srand(x2++);
+            x = rand()%10;
+        }
+        cout<<"Ack for "<<j<<"\n\n";
+        n--;
+        i++;
+        j++;
+    }//while
+
+    cout<<"End of stop and wait protocol";
+
+    return 0;
+}
