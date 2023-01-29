@@ -16,7 +16,7 @@ int main() {
     {
         data = data+"0";
     }
-    cout<<data;
+    cout<<data<<endl;
     datalen = datalen + divlen-1;
     
     for(i=0;i<divlen;i++)

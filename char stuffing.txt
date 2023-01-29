@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    int i=0,j,n,pos;
+    int i=0,n,pos;
     string a,ch,res="dlestx";
     cout<<"Enter the string\n";
     cin>>a;
@@ -24,8 +24,7 @@ int main() {
             res+="dle";
         }//if
         res+=a[i];
-        // i++;
-    }//while
+    }//for
     res+="dleetx";
     cout<<res;
     return 0;
